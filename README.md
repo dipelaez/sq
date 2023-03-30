@@ -14,12 +14,12 @@ Por fim, o código faz o download das imagens e salva em disco em pastas corresp
 
 #### Dependências
 O código utiliza as seguintes bibliotecas do Python:
-- os: biblioteca padrão do Python para manipulação de arquivos e diretórios.
-- requests: biblioteca para fazer requisições HTTP em Python.
-- beautifulsoup4: biblioteca para extrair dados HTML e XML em Python.
-- urllib: biblioteca para fazer o download de arquivos em Python.
+- **os**: biblioteca padrão do Python para manipulação de arquivos e diretórios.
+- **requests**: biblioteca para fazer requisições HTTP em Python.
+- **beautifulsoup4**: biblioteca para extrair dados HTML e XML em Python.
+- **urllib**: biblioteca para fazer o download de arquivos em Python.
 
-Certifique-se de ter todas essas bibliotecas instaladas antes de executar o código acima. Para instalar as bibliotecas selenium e webdriver, você pode utilizar o gerenciador de pacotes pip:
+Certifique-se de ter todas essas bibliotecas instaladas antes de executar o código acima. Para instalar as bibliotecas, você pode utilizar o gerenciador de pacotes pip:
 ```py
 pip install requests beautifulsoup4 os urllib
 ```
