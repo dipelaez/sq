@@ -1,26 +1,28 @@
-# Documentação Anime Quest
-Este repositório contém um conjunto de ferramentas que podem ser úteis para programadores que trabalham em projetos relacionados ao mundo dos animes e mangás.
+# Documentação SQ
+Este repositório contém um conjunto de ferramentas que podem ser úteis para programadores que trabalham em projetos relacionados a webscraping.
 
 
-## aq_leitor_de_barras.py
-O script **aq_leitor_de_barras.py** é uma ferramenta que pode ser utilizada para automatizar a busca de informações de figuras de animes e mangás. Ele é capaz de localizar a página correspondente de um item no site [MyFigureCollection](https://myfigurecollection.net/) utilizando um GTIN (Global Trade Item Number) como input.
+## sq_extract_images.py
+Este código em Python tem como objetivo extrair imagens de anúncios em um conjunto de URLs fornecidas em uma lista. As imagens são baixadas e salvas em pastas correspondentes ao ID de cada anúncio em um diretório base definido pelo usuário.
 
 ### Utilização
-Para utilizar o script, basta executá-lo a partir do terminal, informando o GTIN como argumento:
-```py
-python aq_leitor_de_barras.py <GTIN>
-```
-O script irá abrir em seu navegador padrão a URL da página correspondente no site [MyFigureCollection](https://myfigurecollection.net/).
+Antes de utilizar o código, é necessário definir a lista de URLs dos anúncios que se deseja extrair as imagens, bem como o diretório base onde as imagens serão salvas.
+
+O código itera sobre as URLs de anúncios e para cada uma delas faz uma requisição HTTP para obter o conteúdo da página. Em seguida, o código utiliza a biblioteca BeautifulSoup para encontrar todas as tags de imagem na página e extrai as URLs das imagens que contém a ID do anúncio na URL.
+
+Por fim, o código faz o download das imagens e salva em disco em pastas correspondentes ao ID de cada anúncio no diretório base definido pelo usuário.
+
 #### Dependências
 O código utiliza as seguintes bibliotecas do Python:
-- **webbrowser**: Biblioteca padrão do Python que fornece uma interface simples para abrir URLs em um navegador da web padrão do sistema.
-- **selenium**: Uma biblioteca de automação de navegador que permite simular interações do usuário com páginas da web.
-- **webdriver**: Um submódulo do selenium que fornece uma API para controlar diferentes navegadores da web de forma programática.
-- **chrome.service**: Um submódulo do selenium.webdriver que fornece a classe Service, usada para configurar o executável do ChromeDriver.
-- **chrome.options**: Um submódulo do selenium.webdriver que fornece a classe Options, usada para configurar as opções do ChromeDriver.
+- os: biblioteca padrão do Python para manipulação de arquivos e diretórios.
+- requests: biblioteca para fazer requisições HTTP em Python.
+- beautifulsoup4: biblioteca para extrair dados HTML e XML em Python.
+- urllib: biblioteca para fazer o download de arquivos em Python.
 
 Certifique-se de ter todas essas bibliotecas instaladas antes de executar o código acima. Para instalar as bibliotecas selenium e webdriver, você pode utilizar o gerenciador de pacotes pip:
 ```py
-pip install selenium webdriver
+pip install requests beautifulsoup4 os urllib
 ```
 
+#### Limitações
+É importante ressaltar que o código pode falhar em alguns casos, por exemplo, se as imagens não estiverem disponíveis na URL fornecida ou se a conexão com a internet estiver instável. Nesses casos, o código simplesmente ignora o erro e continua o processo de extração de imagens para as demais URLs fornecidas.
